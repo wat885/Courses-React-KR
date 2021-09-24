@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Transaction from "./components/Transaction";
+import "./App.css";
 
 function App() {
   return (
-    <div >
-      <h1>โปรแกรม</h1>
-      <p>บันทึก</p>
-      <ul>
-        <li>ค่าเดินทาง <span>-200</span></li>
-        <li>ค่าเดินทาง <span>-200</span></li>
-      </ul>
+    <div className="container">
+      <h1 style={{ textAlign: "center" }}>โปรแกรม</h1>
 
+      <Transaction />
     </div>
   );
 }
