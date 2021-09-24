@@ -3,7 +3,7 @@ import Transaction from "./components/Transaction";
 import "./App.css";
 
 function App() {
-  return (
+  return ( 
     <div className="container">
       <h1 style={{ textAlign: "center" }}>โปรแกรม</h1>
 
