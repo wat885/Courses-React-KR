@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HelloComponent from './components/HelloComponent';
+
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    // <App />
+  // </React.StrictMode>
+  <App/>
+  ,
   document.getElementById('root')
 );
 
