@@ -1,15 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // const Item = ({amount, title}) => {
 const Item = (props) => {
-  const {amount, title} = props;
+  const { amount, title } = props;
   return (
     <div>
       <li>
-        {amount} <span> {title}</span>
+        {title} <span> {amount}</span>
       </li>
     </div>
   );
+};
+
+Item.propTypes  = {
+  title: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
 };
 
 export default Item;
