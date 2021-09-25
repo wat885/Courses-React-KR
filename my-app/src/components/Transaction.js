@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "./Item";
 import "./Transaction.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const Transaction = () => {
   const data = [
@@ -17,7 +18,8 @@ const Transaction = () => {
       <ul className="item-list">
         {data.map((element) => {
           // return <Item title={element.title}  amount={element.amount}/>;
-          return <Item {...element} key={element.id} />;
+          // return <Item {...element} key={element.id} />;
+          return <Item {...element} key={uuidv4()} />;
         })}
       </ul>
     </div>
