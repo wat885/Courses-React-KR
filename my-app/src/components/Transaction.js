@@ -4,11 +4,12 @@ import "./Transaction.css";
 
 const Transaction = () => {
   const data = [
-    { title: "ค่ารักษา", amount: "2000" },
-    { title: "เงินเดือน", amount: "20000" },
-    { title: "ค่าเช่า", amount: "5000" },
-    { title: "ค่าเดินทาง", amount: "2000" },
-    { title: "ค่าประกัน", amount: "300" },
+    { id: 1, title: "ค่ารักษา", amount: "2000" },
+    { id: 2, title: "เงินเดือน", amount: "20000" },
+    { id: 3, title: "ค่าเช่า", amount: "5000" },
+    { id: 4, title: "ค่าเดินทาง", amount: "2000" },
+    { id: 5, title: "ค่าประกัน", amount: "300" },
+    { id: 6, title: "ค่าประกัน2", amount: "1300" },
   ];
 
   return (
@@ -16,7 +17,7 @@ const Transaction = () => {
       <ul className="item-list">
         {data.map((element) => {
           // return <Item title={element.title}  amount={element.amount}/>;
-          return <Item {...element}/>;
+          return <Item {...element} key={element.id} />;
         })}
       </ul>
     </div>
