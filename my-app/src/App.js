@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   return ( 
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>โปรแกรม</h1>
+      <h1 style={{ textAlign: "center", color: "lightgray" }}>โปรแกรม</h1>
 
       <Transaction />
     </div>
