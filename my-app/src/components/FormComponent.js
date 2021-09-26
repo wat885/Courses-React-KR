@@ -15,7 +15,14 @@ const FormComponent = () => {
   };
   const saveItem = (event) => {
     event.preventDefault(); //ไม่ให้จอ refresh
-    console.log("บันทึกข้อมูลเรียบร้อย");
+    // console.log("บันทึกข้อมูลเรียบร้อย");
+    const itemData = {
+      title: title,
+      amount: Number(amount),
+    };
+    console.log(itemData);
+    setTitle("");
+    setAmount(0);
   };
   return (
     <div>
@@ -27,6 +34,7 @@ const FormComponent = () => {
             type="text"
             placeholder="ระบุชื่อรายการของคุณ"
             onChange={inputTitle}
+            value={title}
           />
         </div>
         <div className="form-control">
@@ -35,6 +43,7 @@ const FormComponent = () => {
             type="number"
             placeholder="(+ รายรับ , - รายจ่าย)"
             onChange={inputAmount}
+            value={amount}
           />
         </div>
         <div>
