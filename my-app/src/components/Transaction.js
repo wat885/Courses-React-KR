@@ -6,11 +6,8 @@ import { v4 as uuidv4 } from "uuid";
 const Transaction = () => {
   const data = [
     { title: "ค่ารักษา", amount: 2000 },
-    { title: "เงินเดือน", amount: 20000 },
+    { title: "จ่ายประกัน", amount: 300 },
     { title: "ค่าเช่า", amount: 5000 },
-    { title: "ค่าเดินทาง", amount: 2000 },
-    { title: "ค่าประกัน", amount: 330},
-    { title: "ค่าประกัน2", amount: 1300 },
   ];
 
   return (
