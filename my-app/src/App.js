@@ -4,18 +4,22 @@ import FormComponent from "./components/FormComponent";
 import { useState } from "react";
 
 function App() {
-  const initdata = [
+  // const initdata = [
+  //   { id: 1, title: "ค่ารักษา", amount: 2000 },
+  //   { id: 2, title: "จ่ายประกัน", amount: 300 },
+  //   { id: 3, title: "ค่าเช่า", amount: 5000 },
+  // ];
+  // const [items, setItems] = useState(initdata);
+  const [items, setItems] = useState([
     { id: 1, title: "ค่ารักษา", amount: 2000 },
-    { id: 2, title: "จ่ายประกัน", amount: 300 },
-    { id: 3, title: "ค่าเช่า", amount: 5000 },
-  ];
-  const [items, setItems] = useState(initdata);
+    { id: 2, title: "จ่ายประกัน", amount: -300 },
+  ]);
 
   const onAddNewItem = (newItem) => {
     // console.log("ข้อมูลที่ส่งมาจาก form Component", newItem);
     setItems((prevItem) => {
-      return [newItem, ...prevItem]
-    })
+      return [newItem, ...prevItem];
+    });
   };
 
   return (
