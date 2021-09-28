@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FormComponent.css";
 import { v4 as uuidv4 } from "uuid";
 
 const FormComponent = (props) => {
+  console.log("render form components");
 
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
+  const [formValid, setFormValid] = useState(false);
 
   const inputTitle = (event) => {
     // console.log(event.target.value);
@@ -19,7 +21,7 @@ const FormComponent = (props) => {
     event.preventDefault(); //ไม่ให้จอ refresh
     // console.log("บันทึกข้อมูลเรียบร้อย");
     const itemData = {
-      id:uuidv4(),
+      id: uuidv4(),
       title: title,
       amount: Number(amount),
     };
@@ -28,6 +30,13 @@ const FormComponent = (props) => {
     setTitle("");
     setAmount(0);
   };
+
+  // จะถูกเรียกใช่เมือมีการ เปลียนแปลงค่าใน state แล้ว re render
+  useEffect(() => {
+    const checkData = title.trim().length > 0 && amount !== 0;
+    setFormValid(checkData);
+  }, [amount]); // ดักจับ state
+
   return (
     <div>
       {/* {title}{amount} */}
@@ -51,7 +60,7 @@ const FormComponent = (props) => {
           />
         </div>
         <div>
-          <button type="submit" className="btn ">
+          <button type="submit" className="btn " disabled={!formValid}>
             เพิ่มข้อมูล
           </button>
         </div>
