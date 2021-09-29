@@ -4,6 +4,7 @@ import FormComponent from "./components/FormComponent";
 import "./App.css";
 import { useState } from "react";
 import DataContext from "./data/DataContext";
+import ReportComponet from "./components/ReportComponet";
 
 function App() {
   // const initdata = [
@@ -25,9 +26,15 @@ function App() {
   };
 
   return (
-    <DataContext.Provider value={"kongruksiam"}>
+    <DataContext.Provider
+      value={{
+        income: 50000,
+        expense: -8000,
+      }}
+    >
       <div className="container">
         <h1 style={{ textAlign: "center", color: "lightgray" }}>โปรแกรม</h1>
+        <ReportComponet />
         <FormComponent onAddItem={onAddNewItem} />
 
         <Transaction items={items} />
