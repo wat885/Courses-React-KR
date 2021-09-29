@@ -1,7 +1,9 @@
-import "./App.css";
 import Transaction from "./components/Transaction";
 import FormComponent from "./components/FormComponent";
+
+import "./App.css";
 import { useState } from "react";
+import DataContext from "./data/DataContext";
 
 function App() {
   // const initdata = [
@@ -23,12 +25,14 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1 style={{ textAlign: "center", color: "lightgray" }}>โปรแกรม</h1>
-      <FormComponent onAddItem={onAddNewItem} />
+    <DataContext.Provider value={"kongruksiam"}>
+      <div className="container">
+        <h1 style={{ textAlign: "center", color: "lightgray" }}>โปรแกรม</h1>
+        <FormComponent onAddItem={onAddNewItem} />
 
-      <Transaction items={items} />
-    </div>
+        <Transaction items={items} />
+      </div>
+    </DataContext.Provider>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./item.css";
+import DataContext from "../data/DataContext";
 
 // const Item = ({amount, title}) => {
 const Item = (props) => {
@@ -14,6 +15,10 @@ const Item = (props) => {
       <span>
         {symbol} {Math.abs(amount)}
       </span>
+      <DataContext.Consumer>
+        {value=> <p>{value}</p>}
+      </DataContext.Consumer>
+
     </li>
   );
 };
