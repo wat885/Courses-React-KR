@@ -33,9 +33,12 @@ const FormComponent = (props) => {
 
   // จะถูกเรียกใช่เมือมีการ เปลียนแปลงค่าใน state แล้ว re render
   useEffect(() => {
-    const checkData = title.trim().length > 0 && amount !== 0;
+    // const checkData = title.trim().length > 0 && amount !== 0  && amount > 0
+    const checkData = title.trim().length > 0 && amount !== 0 
     setFormValid(checkData);
-  }, [amount]); // ดักจับ state
+
+
+  }, [title, amount]); // ดักจับ state
 
   return (
     <div>
