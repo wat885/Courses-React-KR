@@ -9,9 +9,8 @@ const ReportComponet = () => {
   return (
     <div>
       {/* //วิธีที่ 2 useContext */}
-      <p>
-        รายรับ {income} รายจ่าย {expense}
-      </p>
+      <p>รายรับ {income}</p>
+      <p>รายจ่าย {expense}</p>
 
       {/* วิธีที่ 1.ใช่ข้อมูลโดย consumer */}
       {/* <DataContext.Consumer>
