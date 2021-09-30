@@ -14,11 +14,11 @@ const ReportComponet = () => {
       <div className="report-container">
         <div>
           <h4>ยอดรายรับ</h4>
-          <p className="report plus">{income}</p>
+          <p className="report plus">฿{income}</p>
         </div>
         <div>
           <h4>ยอดรายจ่าย</h4>
-          <p className="report minus">{expense}</p>
+          <p className="report minus">฿{expense}</p>
         </div>
       </div>
 
