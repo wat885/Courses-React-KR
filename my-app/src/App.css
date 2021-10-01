@@ -12,11 +12,31 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-
 }
 
 .container {
   margin: 30px auto;
   width: 350px;
   /* border: 1px solid blue; */
+}
+
+.horizontal-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #333;
+  text-align: center;
+
+}
+.horizontal-menu li{
+  display: inline-block;
+}
+
+.horizontal-menu a{
+  color: #fff;
+  text-decoration: none;
+  padding: 16px;
+  display: block;
+
 }
