@@ -2,7 +2,7 @@ import Transaction from "./components/Transaction";
 import FormComponent from "./components/FormComponent";
 
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import DataContext from "./data/DataContext";
 import ReportComponet from "./components/ReportComponet";
 
@@ -50,6 +50,21 @@ function App() {
     setReportExpense(expense);
   }, [items, reportIncome, reportExpense]);
 
+  // reducer state
+  const [count, setCount] = useState(0);
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "ADD":
+        return state + action.payload;
+      case "SUB":
+        return state - action.payload;
+      case "CLEAR":
+        return 0;
+    }
+  };
+  // const [ผลจากการเปลียนแปลงstate, dispatchเรียกใช่ actionใน reducer] = useReducer(reducerที่ทำงานด้วย ,stateส่งไปทำงาน)
+  const [resule, dispatch] = useReducer(reducer, count);
+
   return (
     <DataContext.Provider
       value={{
@@ -63,8 +78,17 @@ function App() {
         <FormComponent onAddItem={onAddNewItem} />
 
         <Transaction items={items} />
+
+
+        <h1>{resule}</h1>
+        <button onClick={()=>dispatch({type: "ADD",payload:10})}>เพิ่ม</button>
+        <button onClick={()=>dispatch({type: "SUB",payload:5})}>ลด</button>
+        <button onClick={()=>dispatch({type: "CLEAR"})}>ล้าง</button>
+
       </div>
     </DataContext.Provider>
+
+
   );
 }
 
