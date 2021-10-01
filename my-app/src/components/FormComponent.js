@@ -40,6 +40,7 @@ const FormComponent = (props) => {
 
 
   }, [title, amount]); // ดักจับ state
+  
 
   return (
     <div>
