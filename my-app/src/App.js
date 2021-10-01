@@ -51,19 +51,18 @@ function App() {
   }, [items, reportIncome, reportExpense]);
 
   // reducer state
-  const [count, setCount] = useState(0);
+  const [showReport, setshowReport] = useState(false);
   const reducer = (state, action) => {
     switch (action.type) {
-      case "ADD":
-        return state + action.payload;
-      case "SUB":
-        return state - action.payload;
-      case "CLEAR":
-        return 0;
+      case "SHOW":
+        // return showReport ? setshowReport(false) : setshowReport(true)
+        return setshowReport(true);
+      case "HIDE":
+        return setshowReport(false);
     }
   };
   // const [ผลจากการเปลียนแปลงstate, dispatchเรียกใช่ actionใน reducer] = useReducer(reducerที่ทำงานด้วย ,stateส่งไปทำงาน)
-  const [resule, dispatch] = useReducer(reducer, count);
+  const [resule, dispatch] = useReducer(reducer, showReport);
 
   return (
     <DataContext.Provider
@@ -74,21 +73,16 @@ function App() {
     >
       <div className="container">
         <h1 style={{ textAlign: "center", color: "lightgray" }}>โปรแกรม</h1>
-        <ReportComponet />
+        {showReport && <ReportComponet />}
         <FormComponent onAddItem={onAddNewItem} />
 
         <Transaction items={items} />
 
-
         <h1>{resule}</h1>
-        <button onClick={()=>dispatch({type: "ADD",payload:10})}>เพิ่ม</button>
-        <button onClick={()=>dispatch({type: "SUB",payload:5})}>ลด</button>
-        <button onClick={()=>dispatch({type: "CLEAR"})}>ล้าง</button>
-
+        <button onClick={() => dispatch({ type: "SHOW" })}>แสดง</button>
+        <button onClick={() => dispatch({ type: "HIDE" })}>ซ่อน</button>
       </div>
     </DataContext.Provider>
-
-
   );
 }
 
