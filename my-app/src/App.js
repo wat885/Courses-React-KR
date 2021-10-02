@@ -26,6 +26,7 @@ function App() {
 
   const [reportIncome, setReportIncome] = useState(0);
   const [reportExpense, setReportExpense] = useState(0);
+  const [test, setTest] = useState('test value');
 
   const onAddNewItem = (newItem) => {
     // console.log("ข้อมูลที่ส่งมาจาก form Component", newItem);
@@ -70,6 +71,7 @@ function App() {
       value={{
         income: reportIncome,
         expense: reportExpense,
+        value : test,
       }}
     >
       <div className="container">
